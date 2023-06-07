@@ -1,0 +1,36 @@
+// Заголовки, общие БЄМ блоки и проче...
+.logo {
+  display: flex;
+  align-items: center;
+  z-index: 5;
+
+  // .logo__name
+
+  &__name {
+    display: inline-block;
+    font-style: normal;
+    font-weight: 700;
+    font-size: rem(28);
+    line-height: 140%;
+    padding-left: rem(8);
+    @include adaptiveValue("font-size", 28, 24);
+  }
+}
+.title {
+  font-family: "Graphik";
+  font-style: normal;
+  font-weight: 700;
+  font-size: rem(60);
+  line-height: math.div(70,60);
+  color: $mainColor;
+  @include adaptiveValue("font-size", 60, 36);
+}
+.subtitle {
+  font-family: "Nunito Sans";
+  font-style: normal;
+  font-weight: 400;
+  font-size: rem(21);
+  line-height: math.div(21,16);
+  color:$secondaryTextColor;
+  
+}

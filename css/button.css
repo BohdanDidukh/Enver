@@ -1,0 +1,28 @@
+.button {
+  width: rem(200);
+  height: rem(60);
+  background: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+@media (any-hover: hover) {
+  .button:hover {
+    background-color: #ffffff;
+    transition: all 0.3s ease;
+  }
+}
+.button._fw {
+  width: 100%;
+}
+.button-transparent {
+  width: rem(157);
+  height: rem(44);
+}
+@media (any-hover: hover) {
+  .button-transparent:hover {
+    background-color: #ffffff;
+    color: #000;
+    transition: all 0.3s ease;
+  }
+}

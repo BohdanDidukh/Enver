@@ -1,0 +1,58 @@
+//====================================================================================================
+.footer {
+  // .footer__container
+
+  &__container {
+  }
+
+  // .footer__content
+
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding-bottom: rem(100);
+    @media (max-width: rem(900)) {
+      flex-direction: column;
+      gap:rem(40);
+    }
+  }
+
+  // .footer__logo
+
+  &__logo {
+  }
+
+  // .footer__menu
+
+  &__menu {
+    display: flex;
+    gap: rem(40);
+    @media (max-width: rem(900)) {
+      text-align: center;
+      flex-direction: column;
+    }
+  }
+
+  // .footer__menu-item
+
+  &__menu-item {
+    font-family: "Nunito Sans";
+    font-weight: 400;
+    font-size: rem(18);
+    line-height: math.div(25, 18);
+    color: $secondaryTextColor;
+  }
+
+  // .footer__rights
+
+  &__rights {
+    font-family: "Nunito Sans";
+    font-weight: 400;
+    font-size: rem(16);
+    line-height: math.div(38, 16);
+    color: $secondaryTextColor;
+  }
+}
+
+//====================================================================================================

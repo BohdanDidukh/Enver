@@ -1,0 +1,199 @@
+//====================================================================================================
+.header {
+  // .header__container
+  margin-top: rem(42);
+  &__container {
+    position: relative;
+  }
+  // .header__content
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  // .header__logo
+
+  &__logo {
+  }
+
+  // .header__menu
+
+  &__menu {
+  }
+  // .header__buttons-block
+
+  &__buttons-block {
+    display: flex;
+    align-items: center;
+  }
+  // .header__button
+
+  &__button {
+    font-size: rem(16);
+  }
+}
+.menu {
+  // .menu__icon
+
+  &__icon {
+  }
+
+  // .menu__body
+
+  &__body {
+    @media (max-width: $mobile) {
+      position: fixed;
+      height: 100%;
+      width: 100%;
+      top: 0;
+      left: -100%;
+      transition: all 0.3s ease 0s;
+      overflow: hidden;
+      z-index: 2;
+      background-color: $backgroundColor;
+      &::before {
+        content: "";
+        position: fixed;
+        left: -100%;
+        top: 0;
+        width: 100%;
+        z-index: 1;
+        @include adaptiveValue("height", 140, 100, 768, 320, 2);
+        background-color: $backgroundColor;
+      }
+    }
+    .menu-open & {
+      left: 0;
+      &::before {
+        left: 0;
+      }
+    }
+  }
+
+  // .menu__list
+
+  &__list {
+    display: flex;
+    gap: rem(40);
+    @media (max-width: $mobile) {
+      flex-direction: column;
+      column-gap: rem(35);
+      text-align: center;
+      height: 100%;
+      @include adaptiveValue("padding-top", 180, 130);
+    }
+  }
+
+  // .menu__item
+
+  &__item {
+    font-family: "Nunito Sans";
+    font-weight: 600;
+    font-size: rem(18);
+    line-height: math.div(25, 18);
+    color: $mainColor;
+    @media (max-width: $mobile) {
+      font-size: rem(40);
+    }
+  }
+  // .menu__link
+
+  &__link {
+    position: relative;
+    &:after {
+      content: "";
+      position: absolute;
+      top: rem(30);
+      width: 0%;
+      height: 1px;
+      display: block;
+      transition: all 0.3s ease;
+    }
+    &:hover::after {
+      width: 100%;
+      background-color: #fff;
+      @media (max-width: $mobile) {
+        width: 0;
+      }
+    }
+  }
+}
+
+.active {
+  color: $secondaryColor;
+  .menu__link {
+    &:hover::after {
+      width: 0;
+    }
+  }
+}
+
+.icon-menu {
+  margin-left: rem(20);
+}
+
+.button {
+  // .button__contact
+  margin-left: rem(10);
+  z-index: 2;
+
+  &__contact {
+    @media (max-width: rem(400)) {
+      display: none;
+    }
+  }
+}
+
+//====================================================================================================
+
+//Burger
+.icon-menu {
+  display: none;
+  @media (max-width: $mobile) {
+    display: block;
+    position: relative;
+    width: rem(30);
+    height: rem(18);
+    cursor: pointer;
+    z-index: 5;
+    span,
+    &::before,
+    &::after {
+      content: "";
+      transition: all 0.3s ease 0s;
+      right: 0;
+      position: absolute;
+      height: rem(2);
+      background-color: #fff;
+    }
+    &::before {
+      top: 0;
+      width: rem(20);
+    }
+    &::after {
+      bottom: 0;
+      width: rem(10);
+    }
+    span {
+      width: rem(15);
+      top: calc(50% - rem(1));
+    }
+    .menu-open & {
+      span {
+        width: 0;
+      }
+      &::before,
+      &::after {
+        width: 100%;
+      }
+      &::before {
+        top: calc(50% - rem(1));
+        transform: rotate(-45deg);
+      }
+      &::after {
+        bottom: calc(50% - rem(1));
+        transform: rotate(45deg);
+      }
+    }
+  }
+}

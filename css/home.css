@@ -1,0 +1,17 @@
+.main-block__content {
+  display: flex;
+}
+.main-block__title {
+  width: rem(430);
+  font-size: rem(80) !important;
+}
+.main-block__subtitle {
+  width: rem(590);
+}
+.main-block__button {
+  background: #5454D4;
+  border-radius: 4px;
+}
+.button__arrow {
+  padding-left: rem(8);
+}
